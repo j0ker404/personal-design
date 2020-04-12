@@ -36,14 +36,15 @@ body {
   /* margin: 1em auto; */
 }
 
-#head,
-#main,
-#foot {
-  /* height: 200px; */
+.container-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   /* margin: 1em auto; */
 }
 
-#head {
+#head,
+#foot {
   /* height: 50vh; */
   flex: 15%;
   /* background-color: #931bf5; */
@@ -62,6 +63,8 @@ body {
 
 #typewriter {
   text-align: center;
+  /* line-height: 2em; */
+  height: 2.5em;
 }
 
 #main {
@@ -70,11 +73,6 @@ body {
   /* background-color: #ffeead; */
 }
 
-#foot {
-  flex: 15%;
-  background-color: #ffcc5c;
-}
-#main-content,
 #foot-content {
   /* height: 100px; */
   /* height:  inherit; */
@@ -84,34 +82,26 @@ body {
   margin: 0 auto;
 }
 
-#head-content {
-  /* border: 10px solid black; */
-  /* height: 80%; */
-  /* height: 50vh; */
-  /* margin: auto; */
-}
-
-
-
-
 .card {
   /* border: 10px solid black; */
   background-color: rgb(242, 250, 250);
   height: inherit;
-  padding: 1.1rem 2em;
+  padding: 1.1em 2em;
   margin: 1.1em 2em;
 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 10 4px 28px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   /* width: 40%; */
   border-radius: 5px;
+  text-align: center;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 10px rgba(0, 0, 0, 0.2);
 }
 .card p.text {
-  text-align: center;
+  text-align: justify;
+  width: inherit;
 }
 
 .card-img-prop {
@@ -119,11 +109,61 @@ body {
 
   /* border-radius: 5px 5px 0 0; */
 }
-
-.card .card-img {
+.card-img {
   height: 5em;
   width: 100%;
   text-align: center;
   /* border: 1px solid black;
   background-color: bisque; */
+}
+
+@media screen and (min-width: 769px) {
+  .container-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* justify-content: stretch; */
+    /* align-content: center; */
+  }
+  #main {
+    margin: 0;
+    padding: 0;
+  }
+  .card {
+    /* border: 10px solid black; */
+    background-color: rgb(242, 250, 250);
+    height: inherit;
+    /* padding: 1.1em 2em; */
+    margin: 1.1em auto;
+    max-width: 40%;
+
+    box-shadow: 10 4px 28px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    /* width: 40%; */
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  #typewriter {
+    text-align: center;
+    height: inherit;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card {
+    /* border: 10px solid black; */
+    background-color: rgb(242, 250, 250);
+    height: inherit;
+    padding: 1.1em 2em;
+    /* margin: 1.1em 2em; */
+    /* margin: 0 auto; */
+
+    box-shadow: 10 4px 28px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    /* width: 40%; */
+    border-radius: 5px;
+    text-align: center;
+  }
 }
